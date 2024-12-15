@@ -1,5 +1,3 @@
-// React.ts
-
 namespace Subjects {
     export class React extends Subject {
       getRequirements(): string {
@@ -7,7 +5,7 @@ namespace Subjects {
       }
   
       getAvailableTeacher(): string {
-        if (this.teacher.experienceTeachingReact !== undefined) {
+        if (this.teacher.experienceTeachingReact && this.teacher.experienceTeachingReact > 0) {
           return `Available Teacher: ${this.teacher.firstName}`;
         }
         return "No available teacher";

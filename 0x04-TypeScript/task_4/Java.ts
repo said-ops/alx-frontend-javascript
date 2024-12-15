@@ -1,5 +1,3 @@
-// Java.ts
-
 namespace Subjects {
     export class Java extends Subject {
       getRequirements(): string {
@@ -7,7 +5,7 @@ namespace Subjects {
       }
   
       getAvailableTeacher(): string {
-        if (this.teacher.experienceTeachingJava !== undefined) {
+        if (this.teacher.experienceTeachingJava && this.teacher.experienceTeachingJava > 0) {
           return `Available Teacher: ${this.teacher.firstName}`;
         }
         return "No available teacher";
