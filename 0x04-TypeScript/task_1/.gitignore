@@ -1,0 +1,12 @@
+# Node.js dependencies
+node_modules/
+
+# Vite build output
+/dist/
+
+# Tailwind CSS output
+/src/output.css
+
+# OS generated files
+.DS_Store
+Thumbs.db
