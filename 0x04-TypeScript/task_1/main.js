@@ -14,3 +14,8 @@ var director1 = {
 };
 console.log(director1);
 console.log(teacher3);
+var printTeacher = function (teacher) {
+    var firstLetter = teacher.firstName.charAt(0).toUpperCase();
+    return firstLetter + ". " + teacher.lastName;
+};
+console.log(printTeacher(teacher3));

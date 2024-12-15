@@ -1,3 +1,5 @@
+
+//teachers 
 interface Teacher {
   firstName: string;
   lastName: string;
@@ -14,7 +16,7 @@ const teacher3: Teacher = {
     location: 'London',
     contract: false,
   };
-
+// directors 
   interface Directors extends Teacher{
     numberOfReports : number
   }
@@ -28,4 +30,18 @@ const teacher3: Teacher = {
   };
   console.log(director1);
 
-  console.log(teacher3)
+  console.log(teacher3);
+
+  // interface printTeacherFunction
+
+  interface printTeacherFunction {
+   (teacher :Teacher) :string
+  }
+
+  const printTeacher : printTeacherFunction = (teacher: Teacher) =>{
+    const firstLetter = teacher.firstName.charAt(0).toUpperCase()
+
+    return `${firstLetter}. ${teacher.lastName}`
+  }
+
+console.log(printTeacher(teacher3))
