@@ -45,3 +45,40 @@ const teacher3: Teacher = {
   }
 
 console.log(printTeacher(teacher3))
+
+//student interface 
+
+interface Student {
+    firstName :string;
+    lastName:string;
+    workOnHomework():void;
+    displayName():string;
+}
+//constructor interface
+interface StudentConstructor {
+    firstName: string;
+    lastName: string;
+}
+
+// class student 
+
+class StudentClass implements Student {
+
+    firstName :string;
+    lastName : string;
+
+    constructor ({firstName,lastName} :StudentConstructor) {
+        this.firstName=firstName;
+        this.lastName=lastName
+    }
+    workOnHomework () :string {
+        return 'Currently working'
+    }
+    displayName (): string {
+        return this.firstName
+    }
+}
+
+const student1 :Student = new StudentClass ({firstName:'said',lastName:'idrissi'})
+console.log(student1.displayName())
+console.log(student1.workOnHomework())
