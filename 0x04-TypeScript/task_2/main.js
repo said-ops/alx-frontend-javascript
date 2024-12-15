@@ -19,7 +19,7 @@ var Teacher = /** @class */ (function () {
         return 'cannot from home';
     };
     Teacher.prototype.workTeacherTasks = function () {
-        return 'cannot have a break';
+        return 'getting into work';
     };
     Teacher.prototype.getCoffeeBreak = function () {
         return 'Getting a coffee break';
@@ -37,3 +37,18 @@ var createEmployee = function (salary) {
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
+//task 6
+//function to check employee instance
+function isDirector(employee) {
+    return employee instanceof Director;
+}
+function executeWork(employee) {
+    if (isDirector(employee)) {
+        console.log(employee.workDirectorTasks());
+    }
+    if (!isDirector(employee)) {
+        console.log(employee.workTeacherTasks());
+    }
+}
+executeWork(createEmployee(200));
+executeWork(createEmployee(2000));

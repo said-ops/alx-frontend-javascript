@@ -26,7 +26,7 @@ class Teacher implements TeacherInterface{
   return 'cannot from home'
   }
   workTeacherTasks(): string {
-    return 'cannot have a break'
+    return 'getting into work'
   }
   getCoffeeBreak(): string {
     return 'Getting a coffee break'
@@ -47,3 +47,22 @@ console.log(createEmployee(200));
 console.log(createEmployee(1000));
 
 console.log(createEmployee('$500'));
+
+
+//task 6
+//function to check employee instance
+function isDirector(employee: any){
+  return employee instanceof Director;
+}
+
+function executeWork (employee:any){
+  if(isDirector(employee)){
+    console.log(employee.workDirectorTasks())
+  }
+  if(!isDirector(employee)){
+    console.log(employee.workTeacherTasks())
+  }
+}
+
+executeWork(createEmployee(200))
+executeWork(createEmployee(2000))
